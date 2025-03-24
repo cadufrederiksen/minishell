@@ -1,68 +1,67 @@
-# 🐚 Minishell - Construindo Seu Próprio Shell Unix
+# 🐚 Minishell - Building Your Own Unix Shell
 
 ![C](https://img.shields.io/badge/Language-C-blue) ![Makefile](https://img.shields.io/badge/Build-Makefile-yellow) ![Readline](https://img.shields.io/badge/Library-Readline-orange) ![Norminette](https://img.shields.io/badge/Style-Norminette-green)
 
-O projeto **Minishell** tem como objetivo criar um shell Unix básico, como o **Bash**, permitindo que os estudantes repliquem funcionalidades essenciais de um intérprete de comandos. Este projeto é uma oportunidade para explorar a fundo conceitos de programação de sistemas, manipulação de processos e controle de entrada e saída.
+The **Minishell** project aims to create a basic Unix shell, similar to **Bash**, allowing students to replicate essential functionalities of a command interpreter. This project is an opportunity to thoroughly explore system programming concepts, process management, and input/output control.
 
 ---
 
-## 📋 Objetivo do Projeto
+## 📋 Project Objective
 
-Desenvolver um shell Unix funcional que seja capaz de:
-- **Executar comandos básicos**, como ls, echo, pwd, etc.  
-- **Gerenciar variáveis de ambiente**, permitindo exportar, modificar e acessar valores.  
-- **Lidar com redireções** (`>`, `>>`, `<`) e **tubos** (`|`) para conectar comandos.  
-- Implementar **comandos internos**, como `cd`, `exit`, `env`, e `export`.  
-- **Responder a sinais do sistema**, como Ctrl+C, Ctrl+D e Ctrl+\.  
+Develop a functional Unix shell capable of:
+- **Executing basic commands**, such as `ls`, `echo`, `pwd`, etc.
+- **Managing environment variables**, allowing you to export, modify, and access values.
+- **Handling redirections** (`>`, `>>`, `<`) and **pipes** (`|`) to connect commands.
+- Implementing **built-in commands**, such as `cd`, `exit`, `env`, and `export`.
+- **Responding to system signals**, such as Ctrl+C, Ctrl+D, and Ctrl+\.
 
-Este projeto visa ensinar os conceitos fundamentais de programação de sistemas e como funciona um shell básico por trás dos panos.
-
----
-
-## 📚 Conceitos Fundamentais
-
-- **Gestão de Processos**: criação e manipulação de processos filhos com `fork()`, execução com `execve()`.  
-- **Redireção e Tubos**: controle de entrada e saída com `dup2()` e conexão de comandos encadeados com pipes.  
-- **Manipulação de Sinais**: tratamento de interrupções, como Ctrl+C, para garantir a estabilidade do shell.  
-- **Biblioteca Readline**: leitura interativa de comandos e gerenciamento do histórico de entrada.  
-- **Variáveis de Ambiente**: manipulação de variáveis globais usadas por processos no sistema Unix.  
+This project aims to teach the fundamental concepts of system programming and reveal how a basic shell operates behind the scenes.
 
 ---
 
-## ✨ Funcionalidades Implementadas
+## 📚 Fundamental Concepts
 
-### 🔧 Comandos Internos
-1. **`echo`**: exibe uma mensagem no terminal, com suporte à flag `-n`.  
-2. **`cd`**: muda o diretório atual para o especificado.  
-3. **`pwd`**: exibe o diretório de trabalho atual.  
-4. **`export`**: adiciona ou modifica variáveis de ambiente.  
-5. **`unset`**: remove variáveis de ambiente.  
-6. **`env`**: exibe todas as variáveis de ambiente disponíveis.  
-7. **`exit`**: encerra o shell com um código de saída.
-
-### ⚙️ Recursos Adicionais
-- **Execução de Comandos Externos**: busca comandos no `$PATH` e executa programas binários.  
-- **Suporte a Redireções**:
-  - `>`: redireciona a saída padrão para um arquivo.  
-  - `>>`: redireciona a saída padrão para o final de um arquivo.  
-  - `<`: redireciona a entrada padrão a partir de um arquivo.  
-- **Tuberias (`|`)**: conecta a saída de um comando à entrada de outro.  
-- **Histórico de Comandos**: permite navegação e reutilização de comandos anteriores usando a biblioteca **Readline**.  
-- **Tratamento de Sinais**:
-  - Ctrl+C: interrompe o comando atual sem fechar o shell.  
-  - Ctrl+D: encerra o shell se nenhuma entrada for fornecida.  
-  - Ctrl+\: desabilitado para evitar encerramentos indesejados.  
+- **Process Management**: creating and handling child processes using `fork()` and executing them with `execve()`.
+- **Redirection and Pipes**: controlling input and output with `dup2()` and connecting chained commands with pipes.
+- **Signal Handling**: managing interruptions, such as Ctrl+C, to ensure the shell's stability.
+- **Readline Library**: interactive command reading and history management.
+- **Environment Variables**: manipulating global variables used by processes in the Unix system.
 
 ---
 
-## 🛠️ Ferramentas e Padrões
+## ✨ Implemented Features
 
-| Ferramenta/Padrão      | Descrição                                               |
-|-------------------------|-------------------------------------------------------|
-| **GIT**                | Controle de versão para organizar o desenvolvimento do código. |
-| **Makefile**           | Automação da compilação e geração do executável.       |
-| **Norminette**         | Garantia de conformidade com os padrões de estilo da 42. |
-| **Biblioteca Readline**| Utilizada para leitura interativa e histórico de comandos. |
+### 🔧 Built-In Commands
+1. **`echo`**: displays a message in the terminal, with support for the `-n` flag.
+2. **`cd`**: changes the current directory to the specified one.
+3. **`pwd`**: displays the current working directory.
+4. **`export`**: adds or modifies environment variables.
+5. **`unset`**: removes environment variables.
+6. **`env`**: displays all available environment variables.
+7. **`exit`**: terminates the shell with an exit code.
+
+### ⚙️ Additional Features
+- **Execution of External Commands**: searches for commands in the `$PATH` and executes binary programs.
+- **Support for Redirections**:
+  - `>`: redirects standard output to a file.
+  - `>>`: appends standard output to the end of a file.
+  - `<`: redirects standard input from a file.
+- **Pipes (`|`)**: connects the output of one command to the input of another.
+- **Command History**: allows navigation and reuse of previous commands using the **Readline** library.
+- **Signal Handling**:
+  - Ctrl+C: interrupts the current command without closing the shell.
+  - Ctrl+D: terminates the shell if no input is provided.
+  - Ctrl+\: disabled to prevent unintended terminations.
 
 ---
 
+## 🛠️ Tools and Standards
+
+| Tool/Standard         | Description                                               |
+|-----------------------|-----------------------------------------------------------|
+| **GIT**               | Version control system to organize code development.      |
+| **Makefile**          | Automates compilation and executable generation.          |
+| **Norminette**        | Ensures compliance with the 42 coding style standards.      |
+| **Readline Library**  | Used for interactive command input and command history.   |
+
+---
